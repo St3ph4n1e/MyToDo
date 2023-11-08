@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import TaskItem from './TaskItem.vue';
+import { useItemStore } from '../stores/item'
 
+const store = useItemStore()
 
+const tasks = store.itemList;
 
 </script>
 
@@ -9,7 +12,7 @@ import TaskItem from './TaskItem.vue';
 
     <h1> Liste de taches</h1>
     <div>
-        <TaskItem/>
+        <TaskItem v-for="task in tasks"/>
     </div>
    
 </template>

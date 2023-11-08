@@ -1,6 +1,8 @@
-export interface ItemInterface {
+export interface NewItem {
+  content: string
+}
+
+export interface ItemInterface extends NewItem {
   id: number
-  name: string
-  description?: string
   complete: bool
 }
