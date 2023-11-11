@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TaskFilter from './TaskFilter.vue';
 import TaskItem from './TaskItem.vue';
 
 

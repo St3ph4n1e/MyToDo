@@ -18,7 +18,7 @@ function submit() {
 
 <template>
   <div class="container">
-    <form class="add text-center my-4">
+    <form class="add text-center my-4"  @submit.prevent="submit">
         <label for="add" class="add text-light">Add a new todo:</label>
         <div class="input-group">
             <input v-model="toDo.content" type="text" class="form-control" name="add" id="add">

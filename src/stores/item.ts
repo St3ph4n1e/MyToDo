@@ -1,3 +1,4 @@
+// useItemStore.ts
 import { defineStore } from 'pinia'
 import type { ItemInterface } from '@interfaces/item.interface'
 
@@ -19,6 +20,12 @@ export const useItemStore = defineStore('item', {
         content
       }
       this.itemList.push(item)
+    },
+    searchItem(search: string): ItemInterface[] {
+      console.log(search)
+      return this.itemList.filter((item) =>
+        item.content.toLowerCase().includes(search.toLowerCase())
+      )
     }
   }
 })
