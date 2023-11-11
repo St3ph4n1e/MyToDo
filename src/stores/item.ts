@@ -14,7 +14,7 @@ export const useItemStore = defineStore('item', {
   actions: {
     createItem(content: string) {
       const item: ItemInterface = {
-        id: Math.floor(Math.random() * 100),
+        id: Math.floor(Math.random() * 100000000),
         complete: false,
         content
       }

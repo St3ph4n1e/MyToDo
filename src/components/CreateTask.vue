@@ -9,7 +9,7 @@ const toDo = reactive<NewItem>({
 })
 
 function submit() {
-    if (toDo.content!= null) {
+    if (toDo.content.length > 0) {
         store.createItem(toDo.content)
         console.log(toDo)
     }
@@ -17,13 +17,31 @@ function submit() {
 </script>
 
 <template>
-     <div> 
-        <h2>New item </h2>
-        <label for="new-todo">To-do Name <input v-model="toDo.content" type="text" id="new-todo"></label>
-        <button @click="submit">add To-Do</button>
-    </div>
+  <div class="container">
+    <form class="add text-center my-4">
+        <label for="add" class="add text-light">Add a new todo:</label>
+        <div class="input-group">
+            <input v-model="toDo.content" type="text" class="form-control" name="add" id="add">
+            <div class="input-group-append">
+                <button @click="submit" class="btn btn-outline-secondary" type="button"> +
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
 
 </template>
 
 <style scoped>
+
+input[type=text],
+input[type=text]:focus{
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, .2);
+}
+label.add{
+  margin-bottom: 15px;
+}
 </style>
